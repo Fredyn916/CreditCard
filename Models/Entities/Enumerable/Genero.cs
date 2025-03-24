@@ -1,6 +1,6 @@
 ﻿namespace Models.Entities.Enumerable;
 
-enum Genero
+public enum Genero
 {
     Maculino,
     Feminino,

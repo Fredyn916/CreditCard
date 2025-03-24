@@ -1,8 +1,10 @@
-﻿using System.ComponentModel;
+﻿using Dapper.Contrib.Extensions;
+using Models.Entities.Enumerable;
 
 namespace Models.Entities;
 
-class Cartao
+[Table("Cartoes")]
+public class Cartao
 {
     public int Id { get; set; }
     public int ClienteId { get; set; }
@@ -11,6 +13,7 @@ class Cartao
     public DateOnly Validade { get; set; }
     public int CVV { get; set; }
     public double Limite { get; set; }
+    public Step Step { get; set; }
     public bool isActive { get; set; }
-    public List<Fatura> Faturas { get; set; }
+    public virtual List<Fatura> Faturas { get; set; }
 }

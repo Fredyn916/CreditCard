@@ -1,6 +1,9 @@
-﻿namespace Models.Entities;
+﻿using Dapper.Contrib.Extensions;
 
-class Conta
+namespace Models.Entities;
+
+[Table("Contas")]
+public class Conta
 {
     public int Id { get; set; }
     public String NumeroAgencia = "6633-9";

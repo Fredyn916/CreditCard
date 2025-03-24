@@ -1,8 +1,10 @@
-﻿using Models.Entities.Enumerable;
+﻿using Dapper.Contrib.Extensions;
+using Models.Entities.Enumerable;
 
 namespace Models.Entities;
 
-class Cliente
+[Table("Clientes")]
+public class Cliente
 {
     public int Id { get; set; }
     public String Nome { get; set; }
@@ -12,4 +14,5 @@ class Cliente
     public String Email { get; set; }
     public String Password { get; set; }
     public Genero Genero { get; set; }
+    public double RendaMensal { get; set; }
 }
