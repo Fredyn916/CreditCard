@@ -1,4 +1,4 @@
-﻿namespace Config.Script;
+﻿namespace Config.DataBase.Script;
 
 public static class DataBaseScript
 {

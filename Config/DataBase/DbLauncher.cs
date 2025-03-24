@@ -1,8 +1,8 @@
-﻿using Config.Script;
+﻿using Config.DataBase.Script;
 using Dapper;
 using System.Data.SQLite;
 
-namespace Config;
+namespace Config.DataBase;
 
 public static class DbLauncher
 {
