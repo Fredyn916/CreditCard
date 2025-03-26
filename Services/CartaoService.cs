@@ -13,9 +13,9 @@ public class CartaoService : ICartaoService
         _cartaoRepository = cartaoRepository;
     }
 
-    public async Task Post(Cartao cartao)
+    public async Task<int> Post(Cartao cartao)
     {
-        await _cartaoRepository.Post(cartao);
+        return await _cartaoRepository.Post(cartao);
     }
 
     public async Task<List<Cartao>> Get()

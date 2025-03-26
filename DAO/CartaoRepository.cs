@@ -15,11 +15,12 @@ public class CartaoRepository : ICartaoRepository
         _connectionString = connection.GetConnectionString("DefaultConnection");
     }
 
-    public async Task Post(Cartao cartao)
+    public async Task<int> Post(Cartao cartao)
     {
         using var connection = new SQLiteConnection(_connectionString);
 
         await connection.InsertAsync<Cartao>(cartao);
+        return cartao.Id;
     }
 
     public async Task<List<Cartao>> Get()

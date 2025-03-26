@@ -4,7 +4,7 @@ namespace Services.Interfaces;
 
 public interface IClienteService
 {
-    Task Post(Cliente cliente);
+    Task<int> Post(Cliente cliente);
     Task<List<Cliente>> Get();
     Task<Cliente> GetById(int id);
     Task Put(Cliente editCliente);

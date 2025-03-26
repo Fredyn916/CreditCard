@@ -13,9 +13,9 @@ public class ClienteService : IClienteService
         _clienteRepository = clienteRepository;
     }
 
-    public async Task Post(Cliente cliente)
+    public async Task<int> Post(Cliente cliente)
     {
-        await _clienteRepository.Post(cliente);
+        return await _clienteRepository.Post(cliente);
     }
 
     public async Task<List<Cliente>> Get()
