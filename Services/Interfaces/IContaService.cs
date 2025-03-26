@@ -1,8 +1,8 @@
 ﻿using Models.Entities;
 
-namespace DAO.DI;
+namespace Services.Interfaces;
 
-public interface IContaRepository
+public interface IContaService
 {
     Task Post(Conta conta);
     Task<List<Conta>> Get();

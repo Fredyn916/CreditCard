@@ -1,4 +1,4 @@
-﻿using DAO.DI;
+﻿using DAO.Interfaces;
 using Dapper.Contrib.Extensions;
 using Microsoft.Extensions.Configuration;
 using Models.Entities;

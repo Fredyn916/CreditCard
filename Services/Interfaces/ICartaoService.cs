@@ -1,8 +1,8 @@
 ﻿using Models.Entities;
 
-namespace DAO.DI;
+namespace Services.Interfaces;
 
-public interface ICartaoRepository
+public interface ICartaoService
 {
     Task Post(Cartao cartao);
     Task<List<Cartao>> Get();

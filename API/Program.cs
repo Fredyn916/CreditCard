@@ -1,4 +1,6 @@
+using API.DI;
 using Config.AutoMapper;
+using Config.DataBase;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -7,6 +9,10 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddAutoMapper(typeof(MappingProfile));
+
+DependencyInjection.Inject(builder);
+
+DbLauncher.Initialize();
 
 var app = builder.Build();
 

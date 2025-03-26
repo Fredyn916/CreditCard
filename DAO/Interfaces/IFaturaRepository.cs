@@ -1,6 +1,6 @@
 ﻿using Models.Entities;
 
-namespace DAO.DI;
+namespace DAO.Interfaces;
 
 public interface IFaturaRepository
 {
