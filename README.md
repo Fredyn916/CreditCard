@@ -1,6 +1,5 @@
 Progressão do projeto:
-1 - Criar cadastro (Cliente)
-2 - A partir do cliente criar a Conta
-3 - Com a conta, criar o cartão da mesma
-4 - Com a validade fixa do cartão estipulada em 3 anos (36 meses) criar as faturas para aquele cliente
-5 
+1 - Criação do Cliente (Cadastro) que retorna o objeto do Cliente e armazena numa variável global.
+2 - Criação do Cartão (Automático Random) a partir do ClienteId (Id do objeto global "Cliente"), que retorna o CartaoId.
+3 - Criação das 36 Faturas, respectivas à 3 anos de validade (Fixa), do cartão a partir do CartaoId (Id retornado na criação do Cartão). (CartaoService)
+4 - Criação da Conta (Automático Random) a partir do CartaoId (Id retornado na criação do Cartão) e ClienteId (Id do objeto global "Cliente"), que retorna o objeto da Conta e armazena numa variável global.
