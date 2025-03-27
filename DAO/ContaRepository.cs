@@ -15,11 +15,12 @@ public class ContaRepository : IContaRepository
         _connectionString = connection.GetConnectionString("DefaultConnection");
     }
 
-    public async Task Post(Conta conta)
+    public async Task<Conta> Post(Conta conta)
     {
         using var connection = new SQLiteConnection(_connectionString);
 
         await connection.InsertAsync<Conta>(conta);
+        return conta;
     }
 
     public async Task<List<Conta>> Get()

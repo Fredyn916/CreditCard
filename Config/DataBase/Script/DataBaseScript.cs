@@ -17,15 +17,6 @@ public static class DataBaseScript
                     RendaMensal REAL NOT NULL
                 );
 
-                CREATE TABLE IF NOT EXISTS Contas(
-                    Id INTEGER PRIMARY KEY AUTOINCREMENT,
-                    NumeroAgencia TEXT NOT NULL,
-                    NumeroConta TEXT NOT NULL,
-                    Saldo REAL NOT NULL,
-                    CartaoId INTEGER NOT NULL,
-                    ClienteId INTEGER NOT NULL
-                );
-
                 CREATE TABLE IF NOT EXISTS Cartoes(
                     Id INTEGER PRIMARY KEY AUTOINCREMENT,
                     ClienteId INTEGER NOT NULL,
@@ -35,7 +26,19 @@ public static class DataBaseScript
                     CVV INTEGER NOT NULL,
                     Limite REAL NOT NULL,
                     Step TEXT NOT NULL,
-                    isActive INTEGER NOT NULL
+                    isActive INTEGER NOT NULL,
+                    FOREIGN KEY (ClienteId) REFERENCES Clientes(Id)
+                );
+
+                CREATE TABLE IF NOT EXISTS Contas(
+                    Id INTEGER PRIMARY KEY AUTOINCREMENT,
+                    NumeroAgencia TEXT NOT NULL,
+                    NumeroConta TEXT NOT NULL,
+                    Saldo REAL NOT NULL,
+                    CartaoId INTEGER NOT NULL,
+                    ClienteId INTEGER NOT NULL,
+                    FOREIGN KEY (CartaoId) REFERENCES Cartoes(Id),
+                    FOREIGN KEY (ClienteId) REFERENCES Clientes(Id)
                 );
 
                 CREATE TABLE IF NOT EXISTS Faturas(
@@ -45,7 +48,8 @@ public static class DataBaseScript
                     isClosed INTEGER NOT NULL,
                     DataFechamento DATE NOT NULL,
                     isPaid INTEGER NOT NULL,
-                    CartaoId INTEGER NOT NULL
+                    CartaoId INTEGER NOT NULL,
+                    FOREIGN KEY (CartaoId) REFERENCES Cartoes(Id)
                 );
 
                 CREATE TABLE IF NOT EXISTS Transacoes(

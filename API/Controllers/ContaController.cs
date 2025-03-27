@@ -19,20 +19,19 @@ public class ContaController : ControllerBase
     }
 
     [HttpPost("PostConta")]
-    public async Task<IActionResult> Post(int clienteId, int cartaoId)
+    public async Task<Conta> Post(int cartaoId, int clienteId)
     {
         try
         {
             Conta conta = new Conta();
-            conta.CartaoId = cartaoId;
             conta.ClienteId = clienteId;
+            conta.CartaoId = cartaoId;
 
-            await _contaService.Post(conta);
-            return Ok();
+            return await _contaService.Post(conta);
         }
         catch (Exception e)
         {
-            return BadRequest(e.Message);
+            throw new Exception(e.Message);
         }
     }
 

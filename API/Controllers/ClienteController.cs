@@ -21,7 +21,7 @@ public class ClienteController : ControllerBase
     }
 
     [HttpPost("PostCliente")]
-    public async Task<int> Post(ClienteDTO clienteDTO)
+    public async Task<Cliente> Post(ClienteDTO clienteDTO)
     {
         try
         {

@@ -4,7 +4,7 @@ namespace Services.Interfaces;
 
 public interface IContaService
 {
-    Task Post(Conta conta);
+    Task<Conta> Post(Conta conta);
     Task<List<Conta>> Get();
     Task<Conta> GetById(int id);
     Task Put(Conta editConta);

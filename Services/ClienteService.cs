@@ -13,7 +13,7 @@ public class ClienteService : IClienteService
         _clienteRepository = clienteRepository;
     }
 
-    public async Task<int> Post(Cliente cliente)
+    public async Task<Cliente> Post(Cliente cliente)
     {
         return await _clienteRepository.Post(cliente);
     }

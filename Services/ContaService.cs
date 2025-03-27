@@ -13,9 +13,9 @@ public class ContaService : IContaService
         _contaRepository = contaRepository;
     }
 
-    public async Task Post(Conta conta)
+    public async Task<Conta> Post(Conta conta)
     {
-        await _contaRepository.Post(conta);
+        return await _contaRepository.Post(conta);
     }
 
     public async Task<List<Conta>> Get()

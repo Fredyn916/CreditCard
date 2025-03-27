@@ -12,5 +12,5 @@ public class Fatura
     public DateOnly DataFechamento { get; set; }
     public bool isPaid { get; set; }
     public int CartaoId { get; set; }
-    public virtual List<Transacao> Transacoes { get; set; }
+    public virtual List<Transacao>? Transacoes { get; set; }
 }

@@ -4,7 +4,7 @@ namespace DAO.Interfaces;
 
 public interface IContaRepository
 {
-    Task Post(Conta conta);
+    Task<Conta> Post(Conta conta);
     Task<List<Conta>> Get();
     Task<Conta> GetById(int id);
     Task Put(Conta editConta);

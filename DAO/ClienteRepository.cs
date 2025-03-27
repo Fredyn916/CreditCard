@@ -15,12 +15,12 @@ public class ClienteRepository : IClienteRepository
         _connectionString = connection.GetConnectionString("DefaultConnection");
     }
 
-    public async Task<int> Post(Cliente cliente)
+    public async Task<Cliente> Post(Cliente cliente)
     {
         using var connection = new SQLiteConnection(_connectionString);
 
         await connection.InsertAsync<Cliente>(cliente);
-        return cliente.Id;
+        return cliente;
     }
 
     public async Task<List<Cliente>> Get()
