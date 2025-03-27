@@ -19,7 +19,7 @@ public class FaturaController : ControllerBase
     }
 
     [HttpPost("PostFatura")]
-    public async Task<IActionResult> Post(Fatura fatura)
+    public async Task<IActionResult> Post(int cartao)
     {
         try
         {
